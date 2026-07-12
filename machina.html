@@ -104,6 +104,19 @@
             font-size: 1rem;
             line-height: 1.6;
         }
+        .contributions-gifs {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .contributions-gifs img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
         .roles-section {
             margin: 1.5rem auto 1.5rem;
             max-width: 860px;
@@ -120,6 +133,36 @@
             font-size: 1.4rem;
             font-family: 'TimesLocal', serif;
             letter-spacing: 0.1em;
+        }
+        .animatic-section h2 {
+            margin: 0 0 0.75rem;
+            text-align: center;
+            font-size: 1.4rem;
+            font-family: 'TimesLocal', serif;
+            letter-spacing: 0.1em;
+        }
+        .animatic-section p {
+            margin: 0 0 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .animatic-videos {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        .animatic-video-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 0.8rem;
+        }
+        .animatic-video-card .video-container {
+            margin-bottom: 0.6rem;
+        }
+        .animatic-video-card .video-caption {
+            font-size: 0.9rem;
         }
         .role-list {
             display: grid;
@@ -150,13 +193,14 @@
         .back-link {
             display: inline-block;
             color: #fff;
-            text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.7);
-            padding: 0.75rem 1rem;
-            border-radius: 999px;
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+            border: none;
+            padding: 0.75rem 0;
+            background: transparent;
         }
         .back-link:hover {
-            background: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.8);
         }
     </style>
 </head>
@@ -181,14 +225,20 @@
         </div>
         <div class="contributions-section">
             <h2>Personal Contributions</h2>
-            <p>Developed a narrative-driven game concept, refined the visual identity, and explored immersive storytelling through cinematic presentation.</p>
+            <p>I did all the textures and modeled all the environment assets in the game project. UV maps of the props are grouped together in a 1024 x 1024 map. The props are textured to look rusty and worn down. All assets are low poly to let the custom game engine run smoothly.</p>
+            <div class="contributions-gifs">
+                <img src="Assets/ezgif.com-animated-gif-maker_2.gif" alt="MACHINA contribution animation one">
+                <img src="Assets/ezgif.com-animated-gif-maker.gif" alt="MACHINA contribution animation two">
+                <img src="Assets/MACHINA PROPS2.png" alt="MACHINA props image one">
+                <img src="Assets/MACHINA PROPS1.png" alt="MACHINA props image two">
+            </div>
         </div>
         <div class="roles-section">
             <h2>Roles</h2>
             <div class="role-list">
                 <div class="role-item"><strong>Lera Lim</strong> — Art Lead, Environment and Texture Artist</div>
-                <div class="role-item"><strong>Naomi Chia</strong> — Character, Rigging, UI Design</div>
-                <div class="role-item"><strong>Ng Wei Jia</strong> — Animation</div>
+                <div class="role-item"><strong>Naomi Chia</strong> — Character, Rigging, UI Design Artist</div>
+                <div class="role-item"><strong>Ng Wei Jia</strong> — Animation Artist</div>
                 <div class="role-item"><strong>Kean Wong</strong> — Product Manager, Scripting</div>
                 <div class="role-item"><strong>Brian Lee</strong> — AI Programmer</div>
                 <div class="role-item"><strong>Lum Ko Sand</strong> — Tech Lead, Assets</div>
@@ -203,6 +253,33 @@
                 <div class="role-item"><strong>Brandon Lim</strong> — Audio Lead, Level Designer</div>
             </div>
         </div>
+        <div class="animatic-section">
+            <h2>Animatic</h2>
+            <p class="subtitle">September 2025 - November 2025</p>
+            <p>A short animatic created by the 3 artists before contributing to the game production.</p>
+            <div class="animatic-videos">
+                <div class="animatic-video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/Xl-vEtmttvw" title="Animatic video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-caption">Final animatic pass for the MACHINA narrative.</p>
+                </div>
+                <div class="animatic-video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/F3GrKo24o-8" title="Animatic video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-caption">Refined animatic sequence with pacing and visual direction.</p>
+                </div>
+            </div>
+        </div>
+            <div id="used">
+                <div><i class="fas fa-circle"></i>&nbsp;Maya</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Substance Painter</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Adobe After Effects</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Photoshop</div>
+                <div><i class="fas fa-circle"></i>&nbsp;ZBrush</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Unreal Engine 5</div>
+            </div>
         <a class="back-link" href="index.html#work" onclick="sessionStorage.setItem('openWorkTab','all');">Back to portfolio</a>
     </div>
 </body>
