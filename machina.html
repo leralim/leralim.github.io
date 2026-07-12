@@ -6,30 +6,146 @@
     <title>MACHINA</title>
     <link rel="stylesheet" href="index.css">
     <style>
+        @font-face {
+            font-family: 'TimesLocal';
+            src: url('Assets/times.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         body {
             margin: 0;
             min-height: 100vh;
-            background: linear-gradient(0deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('Assets/lera-lim-banner-ccsg-ver02.webp') center/cover;
+            min-width: 100vw;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background: linear-gradient(0deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('Assets/Vertical Poster.png') center/cover no-repeat;
+            background-attachment: fixed;
             color: #fff;
             font-family: 'Josefin Sans', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         .machina-page {
             max-width: 800px;
+            margin: 0 auto;
             padding: 2rem;
             text-align: center;
         }
         .machina-page h1 {
-            font-family: 'Super Shake', sans-serif;
+            font-family: 'TimesLocal', serif;
             font-size: 3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.35rem;
+            letter-spacing: 0.1em;
+        }
+        .machina-page .subtitle {
+            font-size: 1rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.9);
+            margin: 0 0 1.25rem;
         }
         .machina-page p {
             font-size: 1.1rem;
             line-height: 1.6;
             margin-bottom: 1.5rem;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .video-card {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            backdrop-filter: blur(4px);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .video-caption {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.95);
+        }
+        .contributions-section {
+            margin: 2rem auto 1.5rem;
+            max-width: 640px;
+            text-align: center;
+            padding: 1.25rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(4px);
+        }
+        .contributions-section h2 {
+            margin: 0 0 0.75rem;
+            font-size: 1.4rem;
+            font-family: 'TimesLocal', serif;
+            letter-spacing: 0.1em;
+        }
+        .contributions-section p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .roles-section {
+            margin: 1.5rem auto 1.5rem;
+            max-width: 860px;
+            text-align: left;
+            padding: 1.25rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(4px);
+        }
+        .roles-section h2 {
+            margin: 0 0 1rem;
+            text-align: center;
+            font-size: 1.4rem;
+            font-family: 'TimesLocal', serif;
+            letter-spacing: 0.1em;
+        }
+        .role-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(250px, 1fr));
+            gap: 0.75rem 1.25rem;
+        }
+        .role-item {
+            font-size: 0.95rem;
+            line-height: 1.45;
+        }
+        .role-item strong {
+            display: inline-block;
+            margin-right: 0.25rem;
+        }
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #000;
+        }
+        body::-webkit-scrollbar-thumb {
+            background: rgb(255, 50, 50);
+            border-radius: 999px;
+        }
+        body::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 50, 50, 0.9);
         }
         .back-link {
             display: inline-block;
@@ -47,7 +163,46 @@
 <body>
     <div class="machina-page">
         <h1>MACHINA</h1>
-        <p>A short 2D game concept page for the MACHINA project. This space can be expanded with gameplay details, screenshots, and development notes.</p>
+        <p class="subtitle">January 2026 - April 2026</p>
+        <p>A first-person steampunk puzzle-platformer set in an experimental facility, where players sacrifice their own life essence to power a weapon that enables teleportation, blinding light, and enemy manipulation in order to escape.</p>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/vA-ZHtA9bBc" title="MACHINA video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">Gameplay and visual direction for the MACHINA concept.</p>
+            </div>
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/aJ_faNhasB4" title="MACHINA video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">Development and storytelling progression for the project.</p>
+            </div>
+        </div>
+        <div class="contributions-section">
+            <h2>Personal Contributions</h2>
+            <p>Developed a narrative-driven game concept, refined the visual identity, and explored immersive storytelling through cinematic presentation.</p>
+        </div>
+        <div class="roles-section">
+            <h2>Roles</h2>
+            <div class="role-list">
+                <div class="role-item"><strong>Lera Lim</strong> — Art Lead, Environment and Texture Artist</div>
+                <div class="role-item"><strong>Naomi Chia</strong> — Character, Rigging, UI Design</div>
+                <div class="role-item"><strong>Ng Wei Jia</strong> — Animation</div>
+                <div class="role-item"><strong>Kean Wong</strong> — Product Manager, Scripting</div>
+                <div class="role-item"><strong>Brian Lee</strong> — AI Programmer</div>
+                <div class="role-item"><strong>Lum Ko Sand</strong> — Tech Lead, Assets</div>
+                <div class="role-item"><strong>Tan Si Han</strong> — Physics &amp; Math Programmer</div>
+                <div class="role-item"><strong>Curtis Wee</strong> — Editor, Serialisation Programmer</div>
+                <div class="role-item"><strong>Jeremy Ting</strong> — Graphics Programmer</div>
+                <div class="role-item"><strong>Hurng Kai Rui</strong> — Programmer, Audio Lead</div>
+                <div class="role-item"><strong>Mohamed Ridhwan</strong> — Graphics Programmer</div>
+                <div class="role-item"><strong>Edwin Lee</strong> — Scene, UI Programmer</div>
+                <div class="role-item"><strong>Klive Goh</strong> — Design Lead</div>
+                <div class="role-item"><strong>Fabio Koh</strong> — Mechanics Designer, Level Designer</div>
+                <div class="role-item"><strong>Brandon Lim</strong> — Audio Lead, Level Designer</div>
+            </div>
+        </div>
         <a class="back-link" href="index.html#work" onclick="sessionStorage.setItem('openWorkTab','all');">Back to portfolio</a>
     </div>
 </body>
