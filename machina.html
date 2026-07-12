@@ -105,8 +105,9 @@
             line-height: 1.6;
         }
         .contributions-gifs {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(180px, 1fr));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             gap: 1rem;
             margin-top: 1rem;
         }
@@ -116,6 +117,33 @@
             display: block;
             border-radius: 8px;
             border: 1px solid rgba(255,255,255,0.2);
+        }
+        .contributions-gifs video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: #000;
+        }
+        .contributions-gifs .media-pair {
+            width: 100%;
+            max-width: 680px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            align-items: start;
+            justify-items: center;
+        }
+        .contributions-gifs > img:first-child {
+            max-width: 480px;
+            width: 100%;
+        }
+        .contributions-gifs .media-pair > * {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            object-fit: cover;
         }
         .roles-section {
             margin: 1.5rem auto 1.5rem;
@@ -224,8 +252,8 @@
             </div>
         </div>
         <div class="contributions-section">
-            <h2>Personal Contributions</h2>
-            <p>I did all the textures and modeled all the environment assets in the game project. UV maps of the props are grouped together in a 1024 x 1024 map. The props are textured to look rusty and worn down. All assets are low poly to let the custom game engine run smoothly.</p>
+            <h2>Personal Contributions to the Game</h2>
+            <p>Textured and modeled all the environment assets in the game project. UV maps of the props are grouped together in a 1024 x 1024 map. The props are textured to look rusty and worn down. All assets are low poly to let the custom game engine run smoothly.</p>
             <div class="contributions-gifs">
                 <img src="Assets/ezgif.com-animated-gif-maker_2.gif" alt="MACHINA contribution animation one">
                 <img src="Assets/ezgif.com-animated-gif-maker.gif" alt="MACHINA contribution animation two">
@@ -271,6 +299,19 @@
                     <p class="video-caption">Refined animatic sequence with pacing and visual direction.</p>
                 </div>
             </div>
+            <div class="contributions-section">
+            <h2>Personal Contributions to the Animatic</h2>
+            <p>In addition to the texturing and modeling, I set up the models, lighting, vfx and ambience in Unreal Engine 5. Edited the final rendered cuts in After Effects.</p>
+            <div class="contributions-gifs">
+                <img src="Assets/machina color script.png" alt="MACHINA color script">
+                <div class="media-pair">
+                    <video controls>
+                        <source src="Assets/Screen Recording 2025-11-16 133935.mp4" type="video/mp4">
+                    </video>
+                    <img src="Assets/Screenshot 2026-06-08 013350.png" alt="MACHINA vfx">
+                </div>
+            </div>
+        </div>
         </div>
             <div id="used">
                 <div><i class="fas fa-circle"></i>&nbsp;Maya</div>
