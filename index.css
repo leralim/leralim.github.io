@@ -217,12 +217,26 @@ body {
     height: 180px;
     object-fit: cover;
 }
+.work-card-content {
+    padding: 0.85rem 0.9rem 0.95rem;
+}
+.work-card-tag {
+    display: inline-block;
+    margin-bottom: 0.45rem;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 999px;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+}
 .work-card h3 {
-    margin: 0.8rem 0.9rem 0.3rem;
+    margin: 0 0 0.3rem;
     font-size: 1rem;
 }
 .work-card p {
-    margin: 0 0.9rem 0.9rem;
+    margin: 0;
     font-size: 0.95rem;
     color: rgba(255,255,255,0.9);
 }
@@ -243,6 +257,76 @@ body {
     border: 1px dashed rgba(255,255,255,0.7);
     border-radius: 8px;
     margin-top: 1rem;
+}
+.game-project-button {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.game-project-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.game-project-row .game-project-button {
+    flex: 1 1 calc(50% - 0.5rem);
+    width: calc(50% - 0.5rem);
+    margin-top: 0;
+}
+.game-project-row .game-project-button img {
+    height: 100%;
+    object-fit: cover;
+}
+.game-project-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('Assets/lera-lim-banner-ccsg-ver02.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 0;
+}
+.game-project-button:hover::before,
+.game-project-button:focus::before {
+    opacity: 0.18;
+}
+.game-project-button img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+.game-project-button span {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    z-index: 2;
+}
+.game-project-button:hover span,
+.game-project-button:focus span {
+    opacity: 1;
+    transform: translateY(0);
 }
 .video-grid {
     display: flex;

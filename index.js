@@ -49,6 +49,18 @@ function showWorkTab(tab){
 function showWorkPreview(tab){
     showWorkTab(tab);
 }
+function handlePageHash(){
+    if(window.location.hash === '#work' || window.location.hash === '#works'){
+        showwork();
+        showWorkTab('all');
+    }
+
+    if(sessionStorage.getItem('openWorkTab')){
+        showwork();
+        showWorkTab(sessionStorage.getItem('openWorkTab'));
+        sessionStorage.removeItem('openWorkTab');
+    }
+}
 setTimeout(function(){
     $("#loading").addClass("animated fadeOut");
     setTimeout(function(){
@@ -64,6 +76,7 @@ setTimeout(function(){
 // Contact form handling
 $(function(){
     showWorkTab('all');
+    handlePageHash();
 
     function fallbackMailto(name, email, message){
         var subject = encodeURIComponent('Website message from ' + name);

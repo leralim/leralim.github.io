@@ -57,16 +57,47 @@
         <div id="work-tab-all" class="work-panel active">
             <section>
                 <h2>All Works</h2>
+                <p>Selected pieces across 3D, 2D, and game development.</p>
                 <div class="work-all-grid">
                     <button type="button" class="work-card" onclick="showWorkPreview('3d')">
                         <img src="https://cdnb.artstation.com/p/assets/images/images/099/716/381/large/lera-lim-sardine.webp?1780767961" alt="Sardine Can preview">
-                        <h3>Sardine Can</h3>
-                        <p>Low poly 3D model, textured in Substance Painter and rendered in After Effects.</p>
+                        <div class="work-card-content">
+                            <span class="work-card-tag">3D</span>
+                            <h3>Sardine Can</h3>
+                            <p>Low poly 3D modeling, texturing, and motion-based presentation work.</p>
+                        </div>
                     </button>
                     <button type="button" class="work-card" onclick="showWorkPreview('2d')">
                         <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=800&q=80" alt="2D artwork preview">
-                        <h3>2D Works</h3>
-                        <p>Illustrations and concept art will appear here as they are added.</p>
+                        <div class="work-card-content">
+                            <span class="work-card-tag">2D</span>
+                            <h3>2D Works</h3>
+                            <p>Illustrations, visual development, and concept art pieces.</p>
+                        </div>
+                    </button>
+                    <button type="button" class="work-card" onclick="window.location.href='ukemochi.html'">
+                        <img src="Assets/lera-lim-banner-ccsg-ver02.webp" alt="UKEMOCHI banner preview">
+                        <div class="work-card-content">
+                            <span class="work-card-tag">Game</span>
+                            <h3>UKEMOCHI</h3>
+                            <p>A fast-paced 2D action game with stylized visuals and gameplay direction.</p>
+                        </div>
+                    </button>
+                    <button type="button" class="work-card" onclick="window.location.href='myfirstworld.html'">
+                        <img src="Assets/MyFirstWorld_Poster.png" alt="My First World poster preview">
+                        <div class="work-card-content">
+                            <span class="work-card-tag">Game</span>
+                            <h3>My First World</h3>
+                            <p>A 2D platformer focused on explorative level design and colorful environments.</p>
+                        </div>
+                    </button>
+                    <button type="button" class="work-card" onclick="window.location.href='machina.html'">
+                        <img src="Assets/Vertical Poster.png" alt="Machina poster preview">
+                        <div class="work-card-content">
+                            <span class="work-card-tag">Game</span>
+                            <h3>Machina</h3>
+                            <p>A narrative-driven 3D action game with animatic storytelling.</p>
+                        </div>
                     </button>
                 </div>
             </section>
@@ -103,11 +134,21 @@
 
         <div id="work-tab-game" class="work-panel">
             <section>
-                <h2>Game Projects</h2>
-                <p>
-                    Game-related work and prototypes will appear here as they are added.
-                </p>
-                <div class="placeholder-card">Coming soon</div>
+                <h2>Game Projects</h2>  
+                <button type="button" class="game-project-button" onclick="window.location.href='ukemochi.html'">
+                    <img src="Assets/lera-lim-banner-ccsg-ver02.webp" alt="UKEMOCHI banner">
+                    <span>UKEMOCHI (2D Action Game)</span>
+                </button>
+                <div class="game-project-row">
+                    <button type="button" class="game-project-button" onclick="window.location.href='myfirstworld.html'">
+                        <img src="Assets/MyFirstWorld_Poster.png" alt="MY FIRST WORLD banner">
+                        <span>MY FIRST WORLD (2D Platformer Game)</span>
+                    </button>
+                    <button type="button" class="game-project-button" onclick="window.location.href='machina.html'">
+                        <img src="Assets/Vertical Poster.png" alt="MACHINA banner">
+                        <span>MACHINA (3D Action Narrative Game and Animatic)</span>
+                    </button>
+                </div>
             </section>
         </div>
 
