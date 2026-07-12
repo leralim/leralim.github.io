@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>leralim.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+    <div id="particles-js"></div>
+    <div id="box">
+        <div class="box1 onlywide animated bounceOutLeft" style="animation-delay:1.7s;"></div>
+        <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.8s;"></div>
+        <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.9s;"></div>
+        <div class="box2 animated bounceOutRight" style="animation-delay:1.9s;"></div>
+        <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.8s;"></div>
+        <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.7s;"></div>
+    </div>
+    <a id="about" onclick="showabout()" class="animated fadeIn" style="animation-delay:2.2s;">about</a>
+    <a id="work" onclick="showwork()" class="animated fadeIn" style="animation-delay:2.2s;">works</a>
+    <a id="contact" onclick="showcontact()" class="animated fadeIn" style="animation-delay:2.2s;">contact</a>
+    <div id="middle" class="animated slideInDown" style="animation-delay:2.0s;">
+        <h1 style="font-family: 'Super Shake', sans-serif;">LERA LIM</h1>
+        <h2>3D Texture Artist / Illustrator</h2>
+        <div id="menu">
+            <a onclick="showabout()">about</a>
+            <a onclick="showwork()">works</a>
+            <a onclick="showcontact()">contact</a>
+        </div>
+        <table>
+                <tr>
+                    <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social" href="https://www.linkedin.com/in/lera-lim" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a></td>
+                    <td class="animated zoomIn" style="animation-delay:2.4s;"><a class="social" href="https://www.artstation.com/leralim" target="_blank" rel="noopener"><i class="fab fa-artstation"></i></a></td>
+                    <td class="animated zoomIn" style="animation-delay:2.6s;"><a class="social" href="https://www.instagram.com/aloeinabox/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></td>
+                    <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="mailto:leralim.jy@gmail.com"><i class="fas fa-envelope"></i></a></td>
+                </tr>
+        </table>
+    </div>
+    <div id="work_container" class="container">
+        <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
+        <h1>works.</h1>
+        <div class="work-tabs" role="tablist" aria-label="Work categories">
+            <button type="button" class="work-tab active" data-target="work-tab-all" onclick="showWorkTab('all')">All</button>
+            <button type="button" class="work-tab" data-target="work-tab-3d" onclick="showWorkTab('3d')">3D</button>
+            <button type="button" class="work-tab" data-target="work-tab-game" onclick="showWorkTab('game')">Game</button>
+            <button type="button" class="work-tab" data-target="work-tab-2d" onclick="showWorkTab('2d')">2D</button>
+        </div>
+
+        <div id="work-tab-all" class="work-panel active">
+            <section>
+                <h2>All Works</h2>
+                <div class="work-all-grid">
+                    <button type="button" class="work-card" onclick="showWorkPreview('3d')">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/099/716/381/large/lera-lim-sardine.webp?1780767961" alt="Sardine Can preview">
+                        <h3>Sardine Can</h3>
+                        <p>Low poly 3D model, textured in Substance Painter and rendered in After Effects.</p>
+                    </button>
+                    <button type="button" class="work-card" onclick="showWorkPreview('2d')">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=800&q=80" alt="2D artwork preview">
+                        <h3>2D Works</h3>
+                        <p>Illustrations and concept art will appear here as they are added.</p>
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <div id="work-tab-3d" class="work-panel">
+            <section>
+                <h2>Sardine Can</h2>
+                <p>
+                    A low poly 3D model of a sardine can, textured in Substance Painter and presented in Adobe After Effects. The model was created for a personal project to practice texturing and rendering techniques.
+                </p>
+                <img class="project-image" src="https://cdnb.artstation.com/p/assets/images/images/099/716/381/large/lera-lim-sardine.webp?1780767961" alt="Sardine Can project image">
+                <div class="video-grid">
+                    <div class="video-item">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/rNP0t0HWJa4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p class="video-desc">Work breakdown in Substance Painter.</p>
+                    </div>
+                    <div class="video-item">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/cwvwaKLr1_Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p class="video-desc">A mock product advertisement with my 3d model in After Effects.</p>
+                    </div>
+                </div>
+                <div id="used">
+                    <div><i class="fas fa-circle"></i>&nbsp;Maya</div>
+                    <div><i class="fas fa-circle"></i>&nbsp;Substance Painter</div>
+                    <div><i class="fas fa-circle"></i>&nbsp;Adobe After Effects</div>
+                </div>
+            </section>
+        </div>
+
+        <div id="work-tab-game" class="work-panel">
+            <section>
+                <h2>Game Projects</h2>
+                <p>
+                    Game-related work and prototypes will appear here as they are added.
+                </p>
+                <div class="placeholder-card">Coming soon</div>
+            </section>
+        </div>
+
+        <div id="work-tab-2d" class="work-panel">
+            <section>
+                <h2>2D Works</h2>
+                <p>
+                    Illustrations, concept art, and other 2D pieces will appear here as they are added.
+                </p>
+                <div class="placeholder-card">Coming soon</div>
+            </section>
+        </div>
+    </div>
+    <div id="about_container" class="container">
+            <div onclick="closeabout()"><i class="fas fa-angle-left"></i></div>
+            <h1>about.</h1>
+            <section>
+                <h2>about me</h2>
+                <p>
+                    Curious and unafraid to explore new experiences. Love to learn new skills during free time and enjoys crafting immersive settings with an eye for detail. My love for art and media inspired me to continue honing my artistic abilities.
+                </p>
+                <p>
+                    I am looking for internship opportunities in texturing, modeling and sculpting. Would love to work on educational materials that is community focused.
+                </p>
+            </section>
+            <section>
+                <h2>skills</h2>
+                <ul class="skills-list">
+                    <li>Proficient in 3D modeling and sculpting using Maya and Zbrush with advanced texturing, lighting, and rendering expertise in Substance Painter and Unreal Engine 4/5.</li>
+                    <li>Strong foundation in traditional arts and digital media.</li>
+                    <li>Proficient in concept art and digital illustration using Adobe Photoshop and Procreate.</li>
+                    <li>Experienced in Mixed Reality workflow.</li>
+                    <li>Excellent collaboration with multidisciplinary teams (designers, programmers and marketing); responsive to creative direction and feedback.</li>
+                    <li>Experienced in leading art teams.</li>
+                </ul>
+            </section>
+             <section>
+                <h2>programs i use</h2>
+                <div class="used-list">
+                    <div><i class="fas fa-circle"></i>&nbsp;Maya</div>
+                    <div><i class="fas fa-circle"></i>&nbsp;Zbrush</div>
+                    <div><i class="fas fa-circle"></i>&nbsp;Substance Painter</div>
+                    <div><i class="fas fa-circle"></i>&nbsp;Unreal Engine 4/5</div>
+                    <div><i class="fas fa-circle"></i>&nbsp;Adobe Photoshop</div>
+                    <div><i class="fas fa-circle"></i>&nbsp;Procreate</div>
+                    <div><i class="fas fa-circle"></i>&nbsp;Adobe Creative Suite</div>
+                    <div><i class="fas fa-circle"></i>&nbsp;Adobe After Effects</div>
+                    <div><i class="fas fa-circle"></i>&nbsp;Spine:2D</div>
+                    <div><i class="fas fa-circle"></i>&nbsp;Unity</div>
+                    <div><i class="fas fa-circle"></i>&nbsp;Substance Designer</div>
+                </div>
+            </section>
+             <section>
+                <h2>experiences</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content timeline-content--split">
+                            <div>
+                                <h3>ART NEXT DOOR</h3>
+                                <span class="timeline-date">JUL 2023 - MAR 2024</span>
+                                <p>Assistant Art Teacher</p>
+                                 <ul class="skills-list">
+                                    <li>Taught students basic construction drawings, color theory, painting techniques (traditional and digital) and gave feedback on their works.</li>
+                                    <li>Mentored students on their works which helped them to win competitions.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content timeline-content--split">
+                            <div>
+                                <h3>AXENSION STUDIOS LLP</h3>
+                                <span class="timeline-date">MAR 2022 – MAY 2022 </span>
+                                <p>3D Artist</p>
+                                <ul class="skills-list">
+                                    <li>Modeled, textured, and animated original characters.</li>
+                                    <li>Did asset layout in their game, together with the technical artist.</li>
+                                    <li>Illustrated promotional materials.</li>
+                                    <li> Made storyboards for Mixed Reality workflow.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content timeline-content--split">
+                            <div>
+                                <h3>Digipen Institute of Technology</h3>
+                                <span class="timeline-date">AUG 2023 - MAR 2027</span>
+                                <p>Bachelor of Fine Arts in Digital Art and Animation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content timeline-content--split">
+                            <div>
+                                <h3>Nanyang Polytechnic</h3>
+                                <span class="timeline-date">APR 2020 – MAR 2023</span>
+                                <p>Diploma in Digital Game Art and Design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+              <section>
+                <h2>awards</h2>
+                <ul class="skills-list">
+                    <li>Winner of AI 与爱 (AI and Ai) Book Cover Design Competition</li>
+                    <li>Director's List - NANYANG POLYTECHNIC</li>
+                </ul>
+                </div>
+            </section>
+        </div>
+          <div id="contact_container" class="container">
+            <div onclick="closecontact()"><i class="fas fa-angle-down"></i></div>
+            <h1>contact.</h1>
+            <section>
+                <h2>contact me</h2>
+                <form id="contactForm">
+                    <input id="cf-name" name="name" type="text" placeholder="name" required>
+                    <input id="cf-email" name="email" type="email" placeholder="email" required><br>
+                    <textarea id="cf-message" name="message" placeholder="your message" required rows="5"></textarea><br>
+                    <button type="submit" class="btn_one">send</button>
+                </form>
+                <div id="contact-status" class="contact-status" aria-live="polite"></div>
+            </section>
+        </div>
+        <div id="footer">
+            made on mars <br>
+        </div>
+    <script src="index.js" type="text/javascript"></script>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
