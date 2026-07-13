@@ -92,6 +92,40 @@
             font-size: 0.95rem;
             line-height: 1.5;
             opacity: 0.9;
+                }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .video-card {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            backdrop-filter: blur(4px);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .video-caption {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.95);
         }
         .contributions-section {
             margin: 2rem auto 1.5rem;
@@ -181,6 +215,7 @@
         a, button {
             cursor: url('Assets/Game Icon ICO.png'), pointer;
         }
+    
     </style>
 </head>
 <body>
@@ -189,6 +224,20 @@
         <p class="ukemochi-date">September 2024 - April 2025</p>
         <p>Step into the paws of Mochi, a fearless fox chef on a wild culinary adventure!​</p>
         <p>In this fast paced <span class="ukemochi-number">2</span>D action game, slash through corrupted foes, snatch up lost souls, and unravel deliciously dark secrets. Brave treacherous dungeons, dodge handcrafted hazards, and cook up a plan to save a starving world by tracking down the leftovers of a long lost deity!​</p>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/WbqUTw8vVs0" title="MACHINA video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">Gameplay of Ukemochi.</p>
+            </div>
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/0_TAAYTXHKI" title="Ukemochi Game Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">Game Trailer.</p>
+            </div>
+        </div>
         <section class="ukemochi-achievement" aria-label="Achievement category">
             <h2>Achievement</h2>
 
@@ -199,7 +248,29 @@
         </section>
         <section class="contributions-section" aria-label="Personal contributions">
             <h2>Personal Contributions to the Game</h2>
-            <p>Add the contribution details here to match the Machina-style layout for this project.</p>
+            <p> I was the Art Lead for this project. I worked on the game as the environment and UI/UX artist.</p>
+                <ul class="skills-list">
+                    <li>Managed the art team and decided on the overall art direction.</li>
+                    <li>Rendered the 2d cutscenes, drew and animated the modular assets.</li>
+                    <li>Illustrated the UI screens(main menu, pause menu and death screen) and animated in Spine2D.</li>
+                    <li>Designed the in-game buttons, logos, font and health bar.</li>
+                    <li>Edited game trailer in Adobe After Effects.</li>
+                    <li>Frame-by-frame animated the scene transitions in the trailer(the vines).</li>
+                </ul>
+            <div class="video-grid">
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="Assets/2026-06-11 00-29-14 - Trim.mp4" title="Ukemochi Environment Assets" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">Environment Assets Animation.</p>
+            </div>
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/0_TAAYTXHKI" title="Ukemochi Game Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="video-caption">Game Trailer.</p>
+            </div>
+        </div>
         </section>
         <section class="members-section" aria-label="Members section">
             <div class="members-title">
@@ -217,6 +288,11 @@
                 <div class="role-item"><strong>Gerald</strong> — Gameplay/AI Champion</div>
             </div>
         </section>
+            <div id="used">
+                <div><i class="fas fa-circle"></i>&nbsp;Adobe After Effects</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Photoshop</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Spine:2D</div>
+        </div>
         <a class="back-link" href="index.html#work" onclick="sessionStorage.setItem('openWorkTab','all');">Back to portfolio</a>
     </div>
 </body>
