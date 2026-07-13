@@ -17,7 +17,7 @@
         body {
             margin: 0;
             min-height: 100vh;
-            background: linear-gradient(0deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('Assets/storyboard.jpg') left center/cover;
+            background: linear-gradient(0deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('Assets/MyFirstWorld_Poster.jpg') left center/cover;
             color: #fff;
             font-family: 'Josefin Sans', sans-serif;
             display: flex;
@@ -105,6 +105,14 @@
             line-height: 1.5;
             color: rgba(255,255,255,0.95);
         }
+        .video-grid-mainmenu {
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+        .video-grid-mainmenu .video-card {
+            width: 100%;
+            max-width: 512px;
+        }
         .contributions-section {
             margin: 2rem auto 1.5rem;
             max-width: 860px;
@@ -186,6 +194,7 @@
         .role-item {
             font-size: 1.1rem;
             line-height: 1.45;
+            font-family: 'Josefin Sans', sans-serif;
         }
         .role-item strong {
             display: inline-block;
@@ -199,6 +208,8 @@
         .skills-list {
             font-size: 1.1rem;
             line-height: 1.6;
+            font-family: 'Josefin Sans', sans-serif;
+            text-align: left;
         }
         .skills-list li {
             margin-bottom: 0.5rem;
@@ -214,6 +225,11 @@
         }
         .back-link:hover {
             background: rgba(255,255,255,0.15);
+        }
+        .ukemochi-page p,
+        .video-caption,
+        .contributions-section p {
+            font-family: 'Josefin Sans', sans-serif;
         }
         .ukemochi-worm {
             position: fixed;
@@ -267,7 +283,7 @@
                 <img src="Assets/mfw pg4.jpg" alt="My First World page 4">
                 <img src="Assets/mfw pg5.jpg" alt="My First World page 5">
             </div>
-            <div class="video-grid">
+            <div class="video-grid video-grid-mainmenu">
             <div class="video-card no-border">
                 <div class="video-container">
                     <iframe src="Assets/MyFirstWorld_StartMenu.mp4" title="My First World main menu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
