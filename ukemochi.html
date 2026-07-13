@@ -32,6 +32,7 @@
             overflow-y: auto;
             padding: 3rem 1.5rem;
             box-sizing: border-box;
+            cursor: url('Assets/Game Icon ICO.png'), auto;
         }
         .ukemochi-page {
             max-width: 800px;
@@ -92,6 +93,75 @@
             line-height: 1.5;
             opacity: 0.9;
         }
+        .contributions-section {
+            margin: 2rem auto 1.5rem;
+            max-width: 640px;
+            text-align: center;
+            padding: 1.25rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(4px);
+        }
+        .contributions-section h2 {
+            margin: 0 0 0.75rem;
+            font-size: 1.4rem;
+            font-family: 'Ukemochi', 'Josefin Sans', sans-serif;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .contributions-section p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .members-section {
+            margin: 1.5rem auto 1.5rem;
+            max-width: 860px;
+            text-align: left;
+            padding: 1.25rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(4px);
+        }
+        .members-section h2 {
+            margin: 0 0 1rem;
+            text-align: center;
+            font-size: 1.4rem;
+            font-family: 'Ukemochi', 'Josefin Sans', sans-serif;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .members-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin: 0 0 1rem;
+        }
+        .members-title img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            flex: 0 0 auto;
+        }
+        .members-title h2 {
+            margin: 0;
+        }
+        .role-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(250px, 1fr));
+            gap: 0.75rem 1.25rem;
+        }
+        .role-item {
+            font-size: 0.95rem;
+            line-height: 1.45;
+        }
+        .role-item strong {
+            display: inline-block;
+            margin-right: 0.25rem;
+        };
         .ukemochi-page p {
             font-size: 1.3rem;
             line-height: 1.6;
@@ -108,6 +178,9 @@
         .back-link:hover {
             background: rgba(255,255,255,0.15);
         }
+        a, button {
+            cursor: url('Assets/Game Icon ICO.png'), pointer;
+        }
     </style>
 </head>
 <body>
@@ -121,8 +194,28 @@
 
             <figure>
                 <img src="Assets/banner-01_resize.png" alt="UKEMOCHI achievement banner">
-                <figcaption>Featured in SG60 Games in 2025!</figcaption>
+                <figcaption>Featured in SG<span class="ukemochi-number">60</span> Games in <span class="ukemochi-number">2025</span>!</figcaption>
             </figure>
+        </section>
+        <section class="contributions-section" aria-label="Personal contributions">
+            <h2>Personal Contributions to the Game</h2>
+            <p>Add the contribution details here to match the Machina-style layout for this project.</p>
+        </section>
+        <section class="members-section" aria-label="Members section">
+            <div class="members-title">
+                <img src="Assets/Grp_Logo.png" alt="Group logo">
+                <h2>Members</h2>
+            </div>
+            <div class="role-list">
+                <div class="role-item"><strong>Lera Lim</strong> — Art Lead, Environment and UI Artist</div>
+                <div class="role-item"><strong>Naomi Chia</strong> — Animator and Character Artist</div>
+                <div class="role-item"><strong>Kean Wong</strong> — Product Manager</div>
+                <div class="role-item"><strong>Lum Ko Sand</strong> — Physics/ Collision Champion </div>
+                <div class="role-item"><strong>Tan Si Han</strong> — Design Lead</div>
+                <div class="role-item"><strong>Kai Rui</strong> — Engine Champion</div>
+                <div class="role-item"><strong>Tomy</strong> — Graphics Champion</div>
+                <div class="role-item"><strong>Gerald</strong> — Gameplay/AI Champion</div>
+            </div>
         </section>
         <a class="back-link" href="index.html#work" onclick="sessionStorage.setItem('openWorkTab','all');">Back to portfolio</a>
     </div>
