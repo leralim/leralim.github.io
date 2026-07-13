@@ -64,7 +64,12 @@
         }
         .ukemochi-achievement {
             margin: 2rem auto 1.5rem;
-            text-align: left;
+            text-align: center;
+        }
+        .ukemochi-achievement figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .ukemochi-achievement h2 {
             margin: 0 0 0.75rem;
@@ -74,7 +79,7 @@
         }
         .ukemochi-achievement-category {
             margin: 0 0 0.75rem;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             opacity: 0.85;
         }
         .ukemochi-achievement figure {
@@ -89,7 +94,7 @@
         }
         .ukemochi-achievement figcaption {
             margin-top: 0.75rem;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             line-height: 1.5;
             opacity: 0.9;
                 }
@@ -105,6 +110,12 @@
             border-radius: 12px;
             padding: 1rem;
             backdrop-filter: blur(4px);
+        }
+        .video-card.no-border {
+            background: none;
+            border: none;
+            padding: 0;
+            backdrop-filter: none;
         }
         .video-container {
             position: relative;
@@ -123,7 +134,7 @@
             border: 0;
         }
         .video-caption {
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             line-height: 1.5;
             color: rgba(255,255,255,0.95);
         }
@@ -146,12 +157,13 @@
         }
         .contributions-section p {
             margin: 0;
-            font-size: 1rem;
+            font-size: 1.1rem;
             line-height: 1.6;
         }
         .contributions-photo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            align-items: start;
             gap: 0.75rem;
             margin-top: 1rem;
             width: 100%;
@@ -205,7 +217,7 @@
             gap: 0.75rem 1.25rem;
         }
         .role-item {
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             line-height: 1.45;
         }
         .role-item strong {
@@ -213,17 +225,25 @@
             margin-right: 0.25rem;
         };
         .ukemochi-page p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             line-height: 1.6;
             margin-bottom: 1.5rem;
+        }
+        .skills-list {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .skills-list li {
+            margin-bottom: 0.5rem;
         }
         .back-link {
             display: inline-block;
             color: #fff;
-            text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.7);
-            padding: 0.75rem 1rem;
-            border-radius: 999px;
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+            border: none;
+            padding: 0.75rem 0;
+            background: transparent;
         }
         .back-link:hover {
             background: rgba(255,255,255,0.15);
@@ -234,7 +254,7 @@
             bottom: 1rem;
             width: min(22vw, 140px);
             height: auto;
-            z-index: 0;
+            z-index: -1;
             pointer-events: none;
         }
         a, button {
@@ -276,8 +296,8 @@
             <p> I was the Art Lead for this project. I worked on the game as the environment and UI/UX artist.</p>
                 <ul class="skills-list">
                     <li>Managed the art team and decided on the overall art direction.</li>
-                    <li>Rendered the 2d cutscenes, drew and animated the modular assets.</li>
-                    <li>Illustrated the UI screens(main menu, pause menu and death screen) and animated in Spine2D.</li>
+                    <li>Rendered the 2D cutscenes, drew and animated the modular assets.</li>
+                    <li>Illustrated the UI screens(main menu, pause menu and death screen) and animated in Spine: 2D.</li>
                     <li>Designed the in game buttons, logos, font and health bar.</li>
                     <li>Edited game trailer in Adobe After Effects.</li>
                     <li>Frame by frame animated the scene transitions in the trailer(the vines).</li>
@@ -293,13 +313,13 @@
                 <img src="Assets/uke pg7.jpg" alt="Ukemochi page 7">
             </div>
             <div class="video-grid">
-            <div class="video-card">
+            <div class="video-card no-border">
                 <div class="video-container">
                     <iframe src="Assets/2026-06-11 00-29-14 - Trim.mp4" title="Ukemochi Environment Assets" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <p class="video-caption">Environment Assets Animation.</p>
             </div>
-            <div class="video-card">
+            <div class="video-card no-border">
                 <div class="video-container">
                     <iframe src="Assets/main menu-start.mp4" title="Ukemochi Game Menu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -326,7 +346,7 @@
             <div id="used">
                 <div><i class="fas fa-circle"></i>&nbsp;Adobe After Effects</div>
                 <div><i class="fas fa-circle"></i>&nbsp;Photoshop</div>
-                <div><i class="fas fa-circle"></i>&nbsp;Spine:2D</div>
+                <div><i class="fas fa-circle"></i>&nbsp;Spine:<span class="ukemochi-number">2</span>D</div>
         </div>
         <a class="back-link" href="index.html#work" onclick="sessionStorage.setItem('openWorkTab','all');">Back to portfolio</a>
     </div>
