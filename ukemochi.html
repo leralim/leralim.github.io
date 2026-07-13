@@ -129,7 +129,7 @@
         }
         .contributions-section {
             margin: 2rem auto 1.5rem;
-            max-width: 640px;
+            max-width: 860px;
             text-align: center;
             padding: 1.25rem 1.5rem;
             border: 1px solid rgba(255,255,255,0.25);
@@ -148,6 +148,22 @@
             margin: 0;
             font-size: 1rem;
             line-height: 1.6;
+        }
+        .contributions-photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1rem;
+            width: 100%;
+        }
+        .contributions-photo-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.06);
         }
         .members-section {
             margin: 1.5rem auto 1.5rem;
@@ -212,6 +228,15 @@
         .back-link:hover {
             background: rgba(255,255,255,0.15);
         }
+        .ukemochi-worm {
+            position: fixed;
+            left: 1rem;
+            bottom: 1rem;
+            width: min(22vw, 140px);
+            height: auto;
+            z-index: 0;
+            pointer-events: none;
+        }
         a, button {
             cursor: url('Assets/Game Icon ICO.png'), pointer;
         }
@@ -220,6 +245,7 @@
 </head>
 <body>
     <div class="ukemochi-page">
+        <img class="ukemochi-worm" src="Assets/Worm_Idle.png" alt="Worm character">
         <img class="ukemochi-logo" src="Assets/game logo2_white.png" alt="UKEMOCHI">
         <p class="ukemochi-date">September 2024 - April 2025</p>
         <p>Step into the paws of Mochi, a fearless fox chef on a wild culinary adventure!​</p>
@@ -253,10 +279,20 @@
                     <li>Managed the art team and decided on the overall art direction.</li>
                     <li>Rendered the 2d cutscenes, drew and animated the modular assets.</li>
                     <li>Illustrated the UI screens(main menu, pause menu and death screen) and animated in Spine2D.</li>
-                    <li>Designed the in-game buttons, logos, font and health bar.</li>
+                    <li>Designed the in game buttons, logos, font and health bar.</li>
                     <li>Edited game trailer in Adobe After Effects.</li>
-                    <li>Frame-by-frame animated the scene transitions in the trailer(the vines).</li>
+                    <li>Frame by frame animated the scene transitions in the trailer(the vines).</li>
                 </ul>
+            <div class="contributions-photo-grid" aria-label="Ukemochi production photos">
+                <img src="Assets/uke compile.jpg" alt="Ukemochi compile">
+                <img src="Assets/uke pg1.jpg" alt="Ukemochi page 1">
+                <img src="Assets/uke pg2.jpg" alt="Ukemochi page 2">
+                <img src="Assets/uke pg3.jpg" alt="Ukemochi page 3">
+                <img src="Assets/uke pg4.jpg" alt="Ukemochi page 4">
+                <img src="Assets/uke pg5.jpg" alt="Ukemochi page 5">
+                <img src="Assets/uke pg6.jpg" alt="Ukemochi page 6">
+                <img src="Assets/uke pg7.jpg" alt="Ukemochi page 7">
+            </div>
             <div class="video-grid">
             <div class="video-card">
                 <div class="video-container">
@@ -266,9 +302,9 @@
             </div>
             <div class="video-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/0_TAAYTXHKI" title="Ukemochi Game Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="Assets/main menu-start.mp4" title="Ukemochi Game Menu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <p class="video-caption">Game Trailer.</p>
+                <p class="video-caption">Main Menu Animation.</p>
             </div>
         </div>
         </section>
