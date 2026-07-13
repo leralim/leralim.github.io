@@ -11,12 +11,29 @@
 body {
     padding:0px;
     margin:0px;
-    background:linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("https://images.unsplash.com/photo-1491956175078-460aea0914ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1550&q=80") center center;
-    background-size:cover;
+    background:#000;
     width:100vw;
     height:100vh;
     overflow:hidden;
     font-family: 'Josefin Sans', sans-serif;
+}
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+}
+#bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    z-index: -1;
 }
 #loading {
     width: 100vw;
