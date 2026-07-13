@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MACHINA</title>
+    <link rel="icon" type="image/png" href="Assets/Game_EXE_icon.png">
     <link rel="stylesheet" href="index.css">
     <style>
         @font-face {
@@ -162,6 +163,24 @@
             font-family: 'TimesLocal', serif;
             letter-spacing: 0.1em;
         }
+        .roles-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin: 0 0 1rem;
+        }
+        .roles-title img {
+            width: 42px;
+            height: 42px;
+            max-width: 42px;
+            max-height: 42px;
+            object-fit: contain;
+            flex: 0 0 auto;
+        }
+        .roles-title h2 {
+            margin: 0;
+        }
         .animatic-section h2 {
             margin: 0 0 0.75rem;
             text-align: center;
@@ -262,7 +281,10 @@
             </div>
         </div>
         <div class="roles-section">
-            <h2>Roles</h2>
+            <div class="roles-title">
+                <img src="Assets/ERMINEWORKS_transparent.png" alt="ERMINEWORKS logo">
+                <h2>Roles</h2>
+            </div>
             <div class="role-list">
                 <div class="role-item"><strong>Lera Lim</strong> — Art Lead, Environment and Texture Artist</div>
                 <div class="role-item"><strong>Naomi Chia</strong> — Character, Rigging, UI Design Artist</div>
@@ -323,5 +345,32 @@
             </div>
         <a class="back-link" href="index.html#work" onclick="sessionStorage.setItem('openWorkTab','all');">Back to portfolio</a>
     </div>
+
+    <audio id="machina-bgm" src="Assets/Ambience_Factory_v2.wav" loop preload="auto"></audio>
+    <script>
+        (function () {
+            var bgm = document.getElementById('machina-bgm');
+            bgm.volume = 0.3; // 30% of original volume
+
+            function tryPlay() {
+                var playPromise = bgm.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(function () {
+                        // Autoplay with sound was blocked by the browser.
+                        // Start playback on the first user interaction instead.
+                        var startOnInteraction = function () {
+                            bgm.play();
+                            document.removeEventListener('click', startOnInteraction);
+                            document.removeEventListener('keydown', startOnInteraction);
+                        };
+                        document.addEventListener('click', startOnInteraction);
+                        document.addEventListener('keydown', startOnInteraction);
+                    });
+                }
+            }
+
+            tryPlay();
+        })();
+    </script>
 </body>
 </html>
