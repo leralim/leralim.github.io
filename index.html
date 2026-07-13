@@ -294,5 +294,32 @@
     <script src="index.js" type="text/javascript"></script>
     <script src="particles.js"></script>
     <script src="app.js"></script>
+
+    <audio id="site-bgm" src="Assets/bensound-betterdays.mp3" loop preload="auto"></audio>
+    <script>
+        (function () {
+            var bgm = document.getElementById('site-bgm');
+            bgm.volume = 0.4; // 40% of original volume
+
+            function tryPlay() {
+                var playPromise = bgm.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(function () {
+                        // Autoplay with sound was blocked by the browser.
+                        // Start playback on the first user interaction instead.
+                        var startOnInteraction = function () {
+                            bgm.play();
+                            document.removeEventListener('click', startOnInteraction);
+                            document.removeEventListener('keydown', startOnInteraction);
+                        };
+                        document.addEventListener('click', startOnInteraction);
+                        document.addEventListener('keydown', startOnInteraction);
+                    });
+                }
+            }
+
+            tryPlay();
+        })();
+    </script>
 </body>
 </html>
