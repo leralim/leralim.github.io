@@ -271,6 +271,25 @@
             height: auto;
             z-index: -1;
             pointer-events: none;
+            transform-origin: bottom center;
+            animation: worm-squash-stretch 1.4s ease-in-out infinite;
+        }
+        @keyframes worm-squash-stretch {
+            0%, 100% {
+                transform: scale(1, 1);
+            }
+            15% {
+                transform: scale(1.18, 0.82);
+            }
+            35% {
+                transform: scale(0.85, 1.18);
+            }
+            55% {
+                transform: scale(1.08, 0.94);
+            }
+            75% {
+                transform: scale(0.96, 1.04);
+            }
         }
         a, button {
             cursor: url('Assets/Game Icon ICO.png'), pointer;
