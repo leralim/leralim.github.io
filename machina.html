@@ -124,6 +124,12 @@
             display: block;
             border-radius: 8px;
             border: 1px solid rgba(255,255,255,0.2);
+            cursor: pointer; /* Indicates clickability for the lightbox */
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .contributions-gifs img:hover {
+            transform: scale(1.02);
+            border-color: rgba(255,255,255,0.5);
         }
         .contributions-gifs video {
             width: 100%;
@@ -152,6 +158,90 @@
             height: auto;
             object-fit: cover;
         }
+
+        /* Lightbox Styles */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        .lightbox-overlay.active {
+            display: flex;
+        }
+        .lightbox-content {
+            position: relative;
+            width: 60vw;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 12px;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.6);
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            font-size: 1.3rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .lightbox-close:hover {
+            background: rgba(255,50,50,0.7);
+        }
+        .lightbox-prev, .lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.6);
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            font-size: 1.5rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .lightbox-prev {
+            left: -4rem; /* Positioned outside the 60% box */
+        }
+        .lightbox-next {
+            right: -4rem; /* Positioned outside the 60% box */
+        }
+        .lightbox-prev:hover, .lightbox-next:hover {
+            background: rgba(255,255,255,0.25);
+        }
+
         .roles-section {
             margin: 1.5rem auto 1.5rem;
             max-width: 860px;
@@ -186,6 +276,10 @@
         }
         .roles-title h2 {
             margin: 0;
+        }
+        
+        .animatic-section {
+            display: block;
         }
         .animatic-section h2 {
             margin: 0 0 0.75rem;
@@ -239,6 +333,37 @@
             display: inline-block;
             margin-right: 0.25rem;
         }
+
+        /* Centering used section and back-link */
+        #used {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2.5rem auto 1.5rem;
+            width: 100%;
+        }
+        #used div {
+            display: flex;
+            align-items: center;
+        }
+        .back-link {
+            display: block;
+            color: #fff;
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+            border: none;
+            padding: 0.75rem 0;
+            background: transparent;
+            margin: 0 auto;
+            text-align: center;
+            width: max-content;
+        }
+        .back-link:hover {
+            color: rgba(255,255,255,0.8);
+        }
+
         body::-webkit-scrollbar {
             width: 8px;
         }
@@ -252,22 +377,9 @@
         body::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 50, 50, 0.9);
         }
-        .back-link {
-            display: inline-block;
-            color: #fff;
-            text-decoration: underline;
-            text-underline-offset: 0.2em;
-            border: none;
-            padding: 0.75rem 0;
-            background: transparent;
-        }
-        .back-link:hover {
-            color: rgba(255,255,255,0.8);
-        }
     </style>
 </head>
 <body>
-    <section>
     <div class="machina-page">
         <h1>MACHINA</h1>
         <p class="subtitle">January 2026 - April 2026</p>
@@ -277,15 +389,16 @@
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/vA-ZHtA9bBc" title="MACHINA video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <p class="video-caption">Gameplay and visual direction for the MACHINA concept.</p>
+                <p class="video-caption">Behind the Scenes.</p>
             </div>
             <div class="video-card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/aJ_faNhasB4" title="MACHINA video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <p class="video-caption">Development and storytelling progression for the project.</p>
+                <p class="video-caption">Game Trailer.</p>
             </div>
         </div>
+        
         <div class="contributions-section">
             <h2>Personal Contributions to the Game</h2>
             <p>Textured and modeled all the environment assets in the game project. UV maps of the props are grouped together in a 1024 x 1024 map. The props are textured to look rusty and worn down. All assets are low poly to let the custom game engine run smoothly.</p>
@@ -295,22 +408,23 @@
                 <img src="Assets/MACHINA PROPS2.png" alt="MACHINA props image one">
                 <img src="Assets/MACHINA PROPS1.png" alt="MACHINA props image two">
             </div>
-            <p>Below are the cinematics I rendered in Unreal Engine 5. I did the scene building and setup. Lighting and post-processing were used to enhance the visual appeal and atmosphere of the scenes.</p>
+            <p style="margin-top: 1.5rem;">Below are the cinematics I rendered in Unreal Engine 5. I did the scene building and setup. Lighting and post-processing were used to enhance the visual appeal and atmosphere of the scenes.</p>
             <div class="video-grid">
-            <div class="video-card no-border">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/MvCatAhyjpM" title="Elevator Cutscene" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-card no-border">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/MvCatAhyjpM" title="Elevator Cutscene" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-caption">Elevator Cutscene.</p>
                 </div>
-                <p class="video-caption">Elevator Cutscene.</p>
-            </div>
-            <div class="video-card no-border">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/LomVD_qF0uw" title="Ending Cutscene" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-card no-border">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/LomVD_qF0uw" title="Ending Cutscene" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-caption">Ending Cutscene.</p>
                 </div>
-                <p class="video-caption">Ending Cutscene.</p>
             </div>
         </div>
-        </section>
+
         <div class="roles-section">
             <div class="roles-title">
                 <img src="Assets/ERMINEWORKS_transparent.png" alt="ERMINEWORKS logo">
@@ -334,7 +448,8 @@
                 <div class="role-item"><strong>Brandon Lim</strong> — Audio Lead, Level Designer</div>
             </div>
         </div>
-        <div class="animatic-section">
+
+        <section class="animatic-section">
             <h2>Animatic</h2>
             <p class="subtitle">September 2025 - November 2025</p>
             <p>A short animatic created by the 3 artists before contributing to the game production.</p>
@@ -352,29 +467,42 @@
                     <p class="video-caption">Refined animatic sequence with pacing and visual direction.</p>
                 </div>
             </div>
+            
             <div class="contributions-section">
-            <h2>Personal Contributions to the Animatic</h2>
-            <p>In addition to the texturing and modeling, I set up the models, lighting, vfx and ambience in Unreal Engine 5. Edited the final rendered cuts in After Effects.</p>
-            <div class="contributions-gifs">
-                <img src="Assets/machina color script.png" alt="MACHINA color script">
-                <div class="media-pair">
-                    <video controls>
-                        <source src="Assets/Screen Recording 2025-11-16 133935.mp4" type="video/mp4">
-                    </video>
-                    <img src="Assets/Screenshot 2026-06-08 013350.png" alt="MACHINA vfx">
+                <h2>Personal Contributions to the Animatic</h2>
+                <p>In addition to the texturing and modeling, I set up the models, lighting, vfx and ambience in Unreal Engine 5. Edited the final rendered cuts in After Effects.</p>
+                <div class="contributions-gifs">
+                    <img src="Assets/machina color script.png" alt="MACHINA color script">
+                    <div class="media-pair">
+                        <video controls>
+                            <source src="Assets/Screen Recording 2025-11-16 133935.mp4" type="video/mp4">
+                        </video>
+                        <img src="Assets/Screenshot 2026-06-08 013350.png" alt="MACHINA vfx">
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <div id="used">
+            <div><i class="fas fa-circle"></i>&nbsp;Maya</div>
+            <div><i class="fas fa-circle"></i>&nbsp;Substance Painter</div>
+            <div><i class="fas fa-circle"></i>&nbsp;Adobe After Effects</div>
+            <div><i class="fas fa-circle"></i>&nbsp;Photoshop</div>
+            <div><i class="fas fa-circle"></i>&nbsp;ZBrush</div>
+            <div><i class="fas fa-circle"></i>&nbsp;Unreal Engine 5</div>
         </div>
-        </div>
-            <div id="used">
-                <div><i class="fas fa-circle"></i>&nbsp;Maya</div>
-                <div><i class="fas fa-circle"></i>&nbsp;Substance Painter</div>
-                <div><i class="fas fa-circle"></i>&nbsp;Adobe After Effects</div>
-                <div><i class="fas fa-circle"></i>&nbsp;Photoshop</div>
-                <div><i class="fas fa-circle"></i>&nbsp;ZBrush</div>
-                <div><i class="fas fa-circle"></i>&nbsp;Unreal Engine 5</div>
-            </div>
+        
         <a class="back-link" href="index.html#work" onclick="sessionStorage.setItem('openWorkTab','all');">Back to portfolio</a>
+    </div>
+
+    <!-- Lightbox Element -->
+    <div class="lightbox-overlay" id="lightbox-overlay">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+            <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#10094;</button>
+            <img id="lightbox-image" src="" alt="Expanded View">
+            <button class="lightbox-next" id="lightbox-next" aria-label="Next image">&#10095;</button>
+        </div>
     </div>
 
     <audio id="machina-bgm" src="Assets/Ambience_Factory_v2.wav" loop preload="auto"></audio>
@@ -388,7 +516,6 @@
                 if (playPromise !== undefined) {
                     playPromise.catch(function () {
                         // Autoplay with sound was blocked by the browser.
-                        // Start playback on the first user interaction instead.
                         var startOnInteraction = function () {
                             bgm.play();
                             document.removeEventListener('click', startOnInteraction);
@@ -401,6 +528,68 @@
             }
 
             tryPlay();
+        })();
+
+        // Lightbox Script for Personal Contribution Images
+        (function () {
+            // Target images inside the contributions gifs containers
+            var thumbnails = Array.prototype.slice.call(document.querySelectorAll('.contributions-gifs img'));
+            var overlay = document.getElementById('lightbox-overlay');
+            var lightboxImage = document.getElementById('lightbox-image');
+            var closeBtn = document.getElementById('lightbox-close');
+            var prevBtn = document.getElementById('lightbox-prev');
+            var nextBtn = document.getElementById('lightbox-next');
+            var currentIndex = 0;
+
+            function showImage(index) {
+                currentIndex = index;
+                lightboxImage.src = thumbnails[currentIndex].src;
+                lightboxImage.alt = thumbnails[currentIndex].alt;
+            }
+
+            function openLightbox(index) {
+                showImage(index);
+                overlay.classList.add('active');
+            }
+
+            function closeLightbox() {
+                overlay.classList.remove('active');
+            }
+
+            function showNext() {
+                showImage((currentIndex + 1) % thumbnails.length);
+            }
+
+            function showPrev() {
+                showImage((currentIndex - 1 + thumbnails.length) % thumbnails.length);
+            }
+
+            thumbnails.forEach(function (img, index) {
+                img.addEventListener('click', function () {
+                    openLightbox(index);
+                });
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', showPrev);
+            nextBtn.addEventListener('click', showNext);
+
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay || e.target === document.querySelector('.lightbox-content')) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (!overlay.classList.contains('active')) return;
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowRight') {
+                    showNext();
+                } else if (e.key === 'ArrowLeft') {
+                    showPrev();
+                }
+            });
         })();
     </script>
 </body>
