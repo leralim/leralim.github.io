@@ -190,6 +190,110 @@
             border-radius: 10px;
             border: 1px solid rgba(255,255,255,0.2);
             background: rgba(255,255,255,0.06);
+            cursor: pointer;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .contributions-photo-grid img:hover {
+            transform: scale(1.02);
+            border-color: rgba(255,255,255,0.5);
+        }
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        .lightbox-overlay.active {
+            display: flex;
+        }
+        .lightbox-content {
+            position: relative;
+            width: 60vw;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 12px;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.6);
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            font-size: 1.3rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .lightbox-close:hover {
+            background: rgba(255,50,50,0.7);
+        }
+        .lightbox-prev {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.6);
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            font-size: 1.5rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .lightbox-prev:hover {
+            background: rgba(255,255,255,0.25);
+        }
+        .lightbox-next {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.6);
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            font-size: 1.5rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .lightbox-next:hover {
+            background: rgba(255,255,255,0.25);
         }
         .members-section {
             margin: 1.5rem auto 1.5rem;
@@ -384,6 +488,76 @@
         </div>
         <a class="back-link" href="index.html#work" onclick="sessionStorage.setItem('openWorkTab','all');">Back to portfolio</a>
     </div>
+
+    <div class="lightbox-overlay" id="lightbox-overlay">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+            <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#10094;</button>
+            <img id="lightbox-image" src="" alt="Ukemochi production photo">
+            <button class="lightbox-next" id="lightbox-next" aria-label="Next image">&#10095;</button>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var thumbnails = Array.prototype.slice.call(document.querySelectorAll('.contributions-photo-grid img'));
+            var overlay = document.getElementById('lightbox-overlay');
+            var lightboxImage = document.getElementById('lightbox-image');
+            var closeBtn = document.getElementById('lightbox-close');
+            var prevBtn = document.getElementById('lightbox-prev');
+            var nextBtn = document.getElementById('lightbox-next');
+            var currentIndex = 0;
+
+            function showImage(index) {
+                currentIndex = index;
+                lightboxImage.src = thumbnails[currentIndex].src;
+                lightboxImage.alt = thumbnails[currentIndex].alt;
+            }
+
+            function openLightbox(index) {
+                showImage(index);
+                overlay.classList.add('active');
+            }
+
+            function closeLightbox() {
+                overlay.classList.remove('active');
+            }
+
+            function showNext() {
+                showImage((currentIndex + 1) % thumbnails.length);
+            }
+
+            function showPrev() {
+                showImage((currentIndex - 1 + thumbnails.length) % thumbnails.length);
+            }
+
+            thumbnails.forEach(function (img, index) {
+                img.addEventListener('click', function () {
+                    openLightbox(index);
+                });
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', showPrev);
+            nextBtn.addEventListener('click', showNext);
+
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (!overlay.classList.contains('active')) return;
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowRight') {
+                    showNext();
+                } else if (e.key === 'ArrowLeft') {
+                    showPrev();
+                }
+            });
+        })();
+    </script>
 
     <audio id="ukemochi-bgm" src="Assets/By_ProfBGM_GAME.wav" loop preload="auto"></audio>
     <script>
